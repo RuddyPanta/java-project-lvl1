@@ -1,9 +1,11 @@
 package hexlet.code;
 
+import hexlet.code.view.FirstInterface;
+
 public class App {
   public static void main(String[] args) {
-    System.out.println("Welcome to the Brain Games!");
-    Cli.askName();
+    //запуск главного меню
+      FirstInterface.gameMenu();
   }
 
 }
