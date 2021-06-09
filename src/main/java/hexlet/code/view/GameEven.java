@@ -2,8 +2,9 @@ package hexlet.code.view;
 
 import hexlet.code.controllers.CheckNumberEven;
 import hexlet.code.controllers.ExitProgram;
-import hexlet.code.controllers.RandomForGame;
+import hexlet.code.controllers.RandomNumberForGame;
 import hexlet.code.controllers.ScannerIn;
+import hexlet.code.models.Player;
 
 public class GameEven {
     public static void gameEven() {
@@ -11,7 +12,7 @@ public class GameEven {
         boolean errorIn = true;
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         //генерация случайного числа для игрока и вывод на экран
-        int randomNumber = RandomForGame.numberAt100();
+        int randomNumber = RandomNumberForGame.numberAt100();
         System.out.println("Question: " + randomNumber);
         //проверка числа, где true - чет, false - нечет
         boolean answer = CheckNumberEven.checkEven(randomNumber);
@@ -27,7 +28,9 @@ public class GameEven {
                 errorIn = false;
            } else {
                 //на самом деле нечет
-                ExitProgram.exitProgram("yes");
+               System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
+               System.out.println("Let's try again, " + Player.getPlayerName());
+               ExitProgram.exitProgram("exit");
            }
         }
         //если игрок ответил - no, т.е. число нечет
@@ -38,7 +41,9 @@ public class GameEven {
                 errorIn = false;
            } else {
                 //на самом деле чет
-                ExitProgram.exitProgram("no");
+               System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
+               System.out.println("Let's try again, " + Player.getPlayerName());
+               ExitProgram.exitProgram("exit");
            }
         }
 

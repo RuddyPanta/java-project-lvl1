@@ -9,6 +9,7 @@ public class FirstInterface {
        System.out.println("Please enter the game number and press Enter.\n"
                         + "1 - Greet\n"
                         + "2 - Even\n"
+                        + "3 - Calc\n"
                         + "0 - Exit");
        switch (ScannerIn.scannerInInt()) {
            case 1:
@@ -21,6 +22,14 @@ public class FirstInterface {
                GameEven.gameEven();
                GameEven.gameEven();
                GameEven.gameEven();
+               System.out.println("Congratulations, " + Player.getPlayerName());
+               break;
+
+           case 3:
+               Greet.askName();
+               GameCalc.gameCalc();
+               GameCalc.gameCalc();
+               GameCalc.gameCalc();
                System.out.println("Congratulations, " + Player.getPlayerName());
                break;
 
