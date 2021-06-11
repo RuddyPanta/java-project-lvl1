@@ -29,7 +29,7 @@ public class GameProgression {
         int answerComputer = mathArr[index - 1];
         for (int i = 0; i < mathArr.length; i++) {
             if (i == index - 1) {
-                System.out.print("*** ");
+                System.out.print(".. ");
                 continue;
             }
             System.out.print(mathArr[i] + " ");
