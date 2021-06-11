@@ -12,6 +12,7 @@ public class FirstInterface {
                         + "3 - Calc\n"
                         + "4 - GCD\n"
                         + "5 - Progression\n"
+                        + "6 - Prime\n"
                         + "0 - Exit");
        switch (ScannerIn.scannerInInt()) {
            case 1:
@@ -51,6 +52,13 @@ public class FirstInterface {
                System.out.println("Congratulations, " + Player.getPlayerName());
                break;
 
+           case 6:
+               Greet.askName();
+               GamePrime.gamePrime();
+               GamePrime.gamePrime();
+               GamePrime.gamePrime();
+               System.out.println("Congratulations, " + Player.getPlayerName());
+               break;
            case 0: ExitProgram.exitProgram("exit");
                break;
 
