@@ -20,12 +20,5 @@ public class ScannerIn {
             return scannerInInt();
         }
     }
-    //проверка на ввод ответа yes или no
-    public static boolean checkIsScannerInYesOrNo(String word) {
-        if (word.equals("yes") || word.equals("no")) {
-            return true;
-        }
 
-        return false;
-    }
 }

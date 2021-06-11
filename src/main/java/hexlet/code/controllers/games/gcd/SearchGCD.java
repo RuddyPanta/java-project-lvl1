@@ -1,4 +1,4 @@
-package hexlet.code.controllers;
+package hexlet.code.controllers.games.gcd;
 //поиск НОД от 2х чисел
 public class SearchGCD {
     //массив для разложения на делители одного числа
@@ -11,7 +11,7 @@ public class SearchGCD {
         while (varT != divisor) {
             if ((varT % divisor) == 0) {
                 varT = varT / divisor;
-                index ++;
+                index++;
             } else {
                 divisor++;
             }
@@ -37,9 +37,9 @@ public class SearchGCD {
     }
     //поиск совпадений 2х массивов
     //первый массив меньше по умолчанию
-    private static int matchingArr (int[] arrA, int[] arrB) {
+    private static int matchingArr(int[] arrA, int[] arrB) {
         //сравниваем числа меньшего массива с большим, тк числа отсортированы
-        //то шас по большему массиву через jG оправдан
+        //то шаг по большему массиву через jG оправдан
         int gcd = 1;
         int jG = 0;
         for (int i = 0; i < arrA.length; i++) {
@@ -54,7 +54,7 @@ public class SearchGCD {
         return gcd;
     }
     //поиск общих делителей 2х массивов
-    private static int searchForSharedArr (int[] arrA, int[] arrB) {
+    private static int searchForSharedArr(int[] arrA, int[] arrB) {
         //что бы не заморачиваться с поиском длинны массива состоящего из совпадений
         //мы знаем, что он не может быть больше минимального из 2х массивов
         if (arrA.length > arrB.length) {
@@ -65,11 +65,10 @@ public class SearchGCD {
 
     }
 
-
     public static int searchGCD(int varA, int varB) {
         //заполняем массивы делителями от обоих переменных
         int[] finalArrVarA = searchFinalArr(varA);
-        int[] finalArrVarB = searchFinalArr(varB);;
+        int[] finalArrVarB = searchFinalArr(varB);
         // сравниваем массивы и находим НОД
         return searchForSharedArr(finalArrVarA, finalArrVarB);
     }

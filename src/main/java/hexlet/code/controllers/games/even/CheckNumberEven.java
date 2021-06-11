@@ -1,4 +1,4 @@
-package hexlet.code.controllers;
+package hexlet.code.controllers.games.even;
 
 //проверка на чет или нечет числа int
 //чет - true

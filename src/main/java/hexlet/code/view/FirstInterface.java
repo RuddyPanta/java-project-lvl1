@@ -1,11 +1,15 @@
 package hexlet.code.view;
-
 import hexlet.code.controllers.ExitProgram;
 import hexlet.code.controllers.ScannerIn;
+import hexlet.code.controllers.games.calc.GameCalc;
+import hexlet.code.controllers.games.even.GameEven;
+import hexlet.code.controllers.games.gcd.GameGCD;
+import hexlet.code.controllers.games.prime.GamePrime;
+import hexlet.code.controllers.games.progression.GameProgression;
 import hexlet.code.models.Player;
 //меню для выбора игр
 public class FirstInterface {
-   public static void gameMenu() {
+    public static void gameMenu() {
        System.out.println("Please enter the game number and press Enter.\n"
                         + "1 - Greet\n"
                         + "2 - Even\n"
@@ -17,7 +21,6 @@ public class FirstInterface {
        switch (ScannerIn.scannerInInt()) {
            case 1:
                Greet.askName();
-               FirstInterface.gameMenu();
                break;
 
            case 2:
@@ -59,10 +62,10 @@ public class FirstInterface {
                GamePrime.gamePrime();
                System.out.println("Congratulations, " + Player.getPlayerName());
                break;
-           case 0: ExitProgram.exitProgram("exit");
+           case 0: ExitProgram.exitProgramStandard();
                break;
 
-           default: ExitProgram.exitProgram("wrong");
+           default: ExitProgram.exitProgramWrong();
                break;
        }
     }

@@ -1,6 +1,6 @@
-package hexlet.code.view;
+package hexlet.code.controllers.games.progression;
 
-import hexlet.code.controllers.ExitProgram;
+import hexlet.code.controllers.ComparisonTwoInt;
 import hexlet.code.controllers.RandomNumberForGame;
 import hexlet.code.controllers.ScannerIn;
 
@@ -11,7 +11,7 @@ public class GameProgression {
         int[] mathArr = new int[5 + RandomNumberForGame.randomRandom(10)];
         mathArr[0] = 1;
         //генерация случайного шага
-        int step = RandomNumberForGame.randomAt9();
+        int step = RandomNumberForGame.randomRandom(9);
         //заполнение массива арифметической прогрессией
         for (int i = 1; i < mathArr.length; i++) {
             mathArr[i] = mathArr[i - 1] + step;
@@ -22,7 +22,7 @@ public class GameProgression {
         //массива на экран
         int index = RandomNumberForGame.randomRandom(mathArr.length);
         //цифра которая будет пропущена
-        int answerComputer = mathArr[index - 1];;
+        int answerComputer = mathArr[index - 1];
         for (int i = 0; i < mathArr.length; i++) {
             if (i == index - 1) {
                 System.out.print("*** ");
@@ -34,10 +34,6 @@ public class GameProgression {
         System.out.println();
         int answerPlayer = ScannerIn.scannerInInt();
         System.out.println("Your answer: " + answerPlayer);
-        if (answerComputer != answerPlayer) {
-            System.out.println(answerPlayer + " is wrong answer ;(. Correct answer was " + answerComputer);
-            ExitProgram.exitProgram("exit");
-        }
-        System.out.println("Correct!");
+        ComparisonTwoInt.comparisonTwoInt(answerPlayer, answerComputer);
     }
 }

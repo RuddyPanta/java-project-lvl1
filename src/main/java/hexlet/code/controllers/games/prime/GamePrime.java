@@ -1,5 +1,6 @@
-package hexlet.code.view;
+package hexlet.code.controllers.games.prime;
 
+import hexlet.code.controllers.CheckIsWordYesOrNo;
 import hexlet.code.controllers.ExitProgram;
 import hexlet.code.controllers.RandomNumberForGame;
 import hexlet.code.controllers.ScannerIn;
@@ -24,8 +25,8 @@ public class GamePrime {
         System.out.println("Question: " + number);
         String answerPlayer = ScannerIn.scannerInStr();
         //проверка ввода игрока на yes или no
-        if (!ScannerIn.checkIsScannerInYesOrNo(answerPlayer)) {
-            ExitProgram.exitProgram("wrong");
+        if (!CheckIsWordYesOrNo.checkIsWordYesOrNo(answerPlayer)) {
+            ExitProgram.exitProgramWrong();
         }
         //присваивание boolean значение ответу игрока
         if (answerPlayer.equals("yes")) {
@@ -40,7 +41,7 @@ public class GamePrime {
                 answerComputer = "yes";
             }
             System.out.println(answerPlayer + " is wrong answer ;(. Correct answer was " + answerComputer);
-            ExitProgram.exitProgram("exit");
+            ExitProgram.exitProgramStandard();
             }
         System.out.println("Correct!");
         }

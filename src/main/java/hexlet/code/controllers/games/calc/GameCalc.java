@@ -1,24 +1,16 @@
-package hexlet.code.view;
+package hexlet.code.controllers.games.calc;
 
+import hexlet.code.controllers.ComparisonTwoInt;
 import hexlet.code.controllers.ExitProgram;
 import hexlet.code.controllers.RandomNumberForGame;
 import hexlet.code.controllers.ScannerIn;
 
 public class GameCalc {
-    //метод сравнение ответов
-    private static void comparisonOfAnswers(int answerPlayer, int answerComputer) {
-        if (answerComputer == answerPlayer) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println(answerPlayer + " is wrong answer ;(. Correct answer was " + answerComputer);
-            ExitProgram.exitProgram("exit");
-        }
-    }
     public static void gameCalc() {
-        //формируем случайные числа и операнд
-       int varA = RandomNumberForGame.numberAt100();
-       int varB = RandomNumberForGame.numberAt100();
-       int varSign = RandomNumberForGame.randomAt9();
+       //формируем случайные числа и операнд
+       int varA = RandomNumberForGame.randomRandom(100);
+       int varB = RandomNumberForGame.randomRandom(100);
+       int varSign = RandomNumberForGame.randomRandom(9);
        System.out.println("What is the result of the expression?");
        int answerPlayer;
        int answerComputer;
@@ -33,7 +25,7 @@ public class GameCalc {
                answerPlayer = ScannerIn.scannerInInt();
                answerComputer = varA + varB;
                System.out.println("Your answer: " + answerPlayer);
-               comparisonOfAnswers(answerPlayer, answerComputer);
+               ComparisonTwoInt.comparisonTwoInt(answerPlayer, answerComputer);
                break;
            //вычитание
            case 4:
@@ -43,7 +35,7 @@ public class GameCalc {
                answerPlayer = ScannerIn.scannerInInt();
                answerComputer = varA - varB;
                System.out.println("Your answer: " + answerPlayer);
-               comparisonOfAnswers(answerPlayer, answerComputer);
+               ComparisonTwoInt.comparisonTwoInt(answerPlayer, answerComputer);
                break;
            //умножение
            case 7:
@@ -53,10 +45,10 @@ public class GameCalc {
                answerPlayer = ScannerIn.scannerInInt();
                answerComputer = varA * varB;
                System.out.println("Your answer: " + answerPlayer);
-               comparisonOfAnswers(answerPlayer, answerComputer);
+               ComparisonTwoInt.comparisonTwoInt(answerPlayer, answerComputer);
                break;
            default:
-               ExitProgram.exitProgram("wrong");
+               ExitProgram.exitProgramWrong();
                break;
        }
     }
