@@ -22,7 +22,7 @@ public class GameCalc {
         //повышения вариативности
         //сложение
         if (varSign <= MAX_LIMIT_PLUS) {
-            System.out.println("Question: " + varA + "+" + varB);
+            System.out.println("Question: " + varA + " + " + varB);
             answerPlayer = ScannerIn.scannerInInt();
             answerComputer = varA + varB;
             System.out.println("Your answer: " + answerPlayer);
@@ -30,7 +30,7 @@ public class GameCalc {
         }
         //вычитание
         if (varSign > MAX_LIMIT_PLUS && varSign <= MAX_LIMIT_MINUS) {
-            System.out.println("Question: " + varA + "-" + varB);
+            System.out.println("Question: " + varA + " - " + varB);
             answerPlayer = ScannerIn.scannerInInt();
             answerComputer = varA - varB;
             System.out.println("Your answer: " + answerPlayer);
@@ -38,7 +38,7 @@ public class GameCalc {
         }
         //умножение
         if (varSign > MAX_LIMIT_MINUS && varSign <= MAX_LIMIT_MULTIPLICATION) {
-            System.out.println("Question: " + varA + "*" + varB);
+            System.out.println("Question: " + varA + " * " + varB);
             answerPlayer = ScannerIn.scannerInInt();
             answerComputer = varA * varB;
             System.out.println("Your answer: " + answerPlayer);
