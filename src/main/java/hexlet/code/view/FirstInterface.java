@@ -11,6 +11,7 @@ public class FirstInterface {
                         + "2 - Even\n"
                         + "3 - Calc\n"
                         + "4 - GCD\n"
+                        + "5 - Progression\n"
                         + "0 - Exit");
        switch (ScannerIn.scannerInInt()) {
            case 1:
@@ -39,6 +40,14 @@ public class FirstInterface {
                GameGCD.gameGCD();
                GameGCD.gameGCD();
                GameGCD.gameGCD();
+               System.out.println("Congratulations, " + Player.getPlayerName());
+               break;
+
+           case 5:
+               Greet.askName();
+               GameProgression.gameProgression();
+               GameProgression.gameProgression();
+               GameProgression.gameProgression();
                System.out.println("Congratulations, " + Player.getPlayerName());
                break;
 

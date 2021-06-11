@@ -14,8 +14,13 @@ public class RandomNumberForGame {
             return Integer.valueOf(rd.nextInt(999) + 1);
         }
         //генерация числа от 1 до 9
-        public static int randomSign() {
+        public static int randomAt9() {
             Random rd = new Random();
             return Integer.valueOf(rd.nextInt(8) + 1);
         }
+        //генерация числа с случайным максимальным значением
+    public static int randomRandom(int number) {
+        Random rd = new Random();
+        return Integer.valueOf(rd.nextInt(number) + 1);
+    }
 }

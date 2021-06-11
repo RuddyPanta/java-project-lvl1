@@ -18,7 +18,7 @@ public class GameCalc {
         //формируем случайные числа и операнд
        int varA = RandomNumberForGame.numberAt100();
        int varB = RandomNumberForGame.numberAt100();
-       int varSign = RandomNumberForGame.randomSign();
+       int varSign = RandomNumberForGame.randomAt9();
        System.out.println("What is the result of the expression?");
        int answerPlayer;
        int answerComputer;
