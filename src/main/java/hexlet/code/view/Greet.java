@@ -12,7 +12,7 @@ public class Greet {
             System.out.println("Welcome to the Brain Games!");
             System.out.println("May I have your name?");
             Player.setPlayerName(ScannerIn.scannerInStr());
-            System.out.println("Hello, " + Player.getPlayerName());
+            System.out.println("Hello, " + Player.getPlayerName() + "!");
         }
      }
 }
