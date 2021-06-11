@@ -21,7 +21,7 @@ public class GameProgression {
             mathArr[i] = mathArr[i - 1] + step;
         }
         System.out.println("What number is missing in the progression?");
-        System.out.println("Question: ");
+        System.out.print("Question: ");
         //генерация индекса для пропуска при выводе
         //массива на экран
         int index = RandomNumberForGame.randomRandom(mathArr.length);
