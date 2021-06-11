@@ -5,14 +5,14 @@ import hexlet.code.models.Player;
 public class ExitProgram {
     //завершение программы
     public static void exitProgramStandard() {
-        System.out.println("See you late, " + Player.getPlayerName());
+        System.out.println("See you late, " + Player.getPlayerName() + "!");
         System.exit(0);
     }
     // завершение программы при неправильном
     // вводе данных
     public static void exitProgramWrong() {
         System.out.println("incorrect data entry");
-        System.out.println("Let's try again, " + Player.getPlayerName());
+        System.out.println("Let's try again, " + Player.getPlayerName() + "!");
         System.exit(0);
     }
 }

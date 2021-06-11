@@ -6,9 +6,10 @@ import hexlet.code.controllers.RandomNumberForGame;
 import hexlet.code.controllers.ScannerIn;
 
 public class GamePrime {
+    private static final int MAX_LIMIT = 500;
     public static void gamePrime() {
         //генерируем число
-        int number = RandomNumberForGame.randomRandom(500);
+        int number = RandomNumberForGame.randomRandom(MAX_LIMIT);
         //по умолчанию число простое
         boolean numberIsPrime = true;
         boolean answerPlayerIsPrime;

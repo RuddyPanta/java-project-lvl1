@@ -9,21 +9,28 @@ import hexlet.code.controllers.games.progression.GameProgression;
 import hexlet.code.models.Player;
 //меню для выбора игр
 public class FirstInterface {
+    private static final int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
+    private static final int EXIT = 0;
     public static void gameMenu() {
        System.out.println("Please enter the game number and press Enter.\n"
-                        + "1 - Greet\n"
-                        + "2 - Even\n"
-                        + "3 - Calc\n"
-                        + "4 - GCD\n"
-                        + "5 - Progression\n"
-                        + "6 - Prime\n"
-                        + "0 - Exit");
+                        + GREET + " - Greet\n"
+                        + EVEN + " - Even\n"
+                        + CALC + " - Calc\n"
+                        + GCD + " - GCD\n"
+                        + PROGRESSION + " - Progression\n"
+                        + PRIME + " - Prime\n"
+                        + EXIT + " - Exit");
        switch (ScannerIn.scannerInInt()) {
-           case 1:
+           case GREET:
                Greet.askName();
                break;
 
-           case 2:
+           case EVEN:
                Greet.askName();
                GameEven.gameEven();
                GameEven.gameEven();
@@ -31,7 +38,7 @@ public class FirstInterface {
                System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
 
-           case 3:
+           case CALC:
                Greet.askName();
                GameCalc.gameCalc();
                GameCalc.gameCalc();
@@ -39,7 +46,7 @@ public class FirstInterface {
                System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
 
-           case 4:
+           case GCD:
                Greet.askName();
                GameGCD.gameGCD();
                GameGCD.gameGCD();
@@ -47,7 +54,7 @@ public class FirstInterface {
                System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
 
-           case 5:
+           case PROGRESSION:
                Greet.askName();
                GameProgression.gameProgression();
                GameProgression.gameProgression();
@@ -55,14 +62,16 @@ public class FirstInterface {
                System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
 
-           case 6:
+           case PRIME:
                Greet.askName();
                GamePrime.gamePrime();
                GamePrime.gamePrime();
                GamePrime.gamePrime();
                System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
-           case 0: ExitProgram.exitProgramStandard();
+
+           case EXIT:
+               ExitProgram.exitProgramStandard();
                break;
 
            default: ExitProgram.exitProgramWrong();
