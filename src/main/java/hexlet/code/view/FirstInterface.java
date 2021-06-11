@@ -28,7 +28,7 @@ public class FirstInterface {
                GameEven.gameEven();
                GameEven.gameEven();
                GameEven.gameEven();
-               System.out.println("Congratulations, " + Player.getPlayerName());
+               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
 
            case 3:
@@ -36,7 +36,7 @@ public class FirstInterface {
                GameCalc.gameCalc();
                GameCalc.gameCalc();
                GameCalc.gameCalc();
-               System.out.println("Congratulations, " + Player.getPlayerName());
+               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
 
            case 4:
@@ -44,7 +44,7 @@ public class FirstInterface {
                GameGCD.gameGCD();
                GameGCD.gameGCD();
                GameGCD.gameGCD();
-               System.out.println("Congratulations, " + Player.getPlayerName());
+               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
 
            case 5:
@@ -52,7 +52,7 @@ public class FirstInterface {
                GameProgression.gameProgression();
                GameProgression.gameProgression();
                GameProgression.gameProgression();
-               System.out.println("Congratulations, " + Player.getPlayerName());
+               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
 
            case 6:
@@ -60,7 +60,7 @@ public class FirstInterface {
                GamePrime.gamePrime();
                GamePrime.gamePrime();
                GamePrime.gamePrime();
-               System.out.println("Congratulations, " + Player.getPlayerName());
+               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
                break;
            case 0: ExitProgram.exitProgramStandard();
                break;
