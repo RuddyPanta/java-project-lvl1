@@ -1,6 +1,5 @@
 package hexlet.code.controllers;
 
-import hexlet.code.models.Player;
 //завершение программы
 public class ExitProgram {
     //завершение программы

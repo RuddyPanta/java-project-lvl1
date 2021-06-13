@@ -1,4 +1,5 @@
 package hexlet.code.view;
+
 import hexlet.code.controllers.ExitProgram;
 import hexlet.code.controllers.ScannerIn;
 import hexlet.code.controllers.games.calc.GameCalc;
@@ -6,7 +7,7 @@ import hexlet.code.controllers.games.even.GameEven;
 import hexlet.code.controllers.games.gcd.GameGCD;
 import hexlet.code.controllers.games.prime.GamePrime;
 import hexlet.code.controllers.games.progression.GameProgression;
-import hexlet.code.models.Player;
+
 //меню для выбора игр
 public class FirstInterface {
     private static final int GREET = 1;
@@ -35,7 +36,7 @@ public class FirstInterface {
                GameEven.gameEven();
                GameEven.gameEven();
                GameEven.gameEven();
-               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
+               GamesInterface.congratulations();
                break;
 
            case CALC:
@@ -43,7 +44,7 @@ public class FirstInterface {
                GameCalc.gameCalc();
                GameCalc.gameCalc();
                GameCalc.gameCalc();
-               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
+               GamesInterface.congratulations();
                break;
 
            case GCD:
@@ -51,7 +52,7 @@ public class FirstInterface {
                GameGCD.gameGCD();
                GameGCD.gameGCD();
                GameGCD.gameGCD();
-               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
+               GamesInterface.congratulations();
                break;
 
            case PROGRESSION:
@@ -59,7 +60,7 @@ public class FirstInterface {
                GameProgression.gameProgression();
                GameProgression.gameProgression();
                GameProgression.gameProgression();
-               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
+               GamesInterface.congratulations();
                break;
 
            case PRIME:
@@ -67,7 +68,7 @@ public class FirstInterface {
                GamePrime.gamePrime();
                GamePrime.gamePrime();
                GamePrime.gamePrime();
-               System.out.println("Congratulations, " + Player.getPlayerName() + "!");
+               GamesInterface.congratulations();
                break;
 
            case EXIT:

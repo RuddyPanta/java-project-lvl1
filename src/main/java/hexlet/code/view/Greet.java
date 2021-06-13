@@ -1,6 +1,6 @@
 package hexlet.code.view;
 import hexlet.code.controllers.ScannerIn;
-import hexlet.code.models.Player;
+import hexlet.code.controllers.Player;
 
 
 //Приветствие пользователя и индикация его имени,

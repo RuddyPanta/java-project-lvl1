@@ -1,4 +1,5 @@
-package hexlet.code.models;
+package hexlet.code.controllers;
+
 //вся информация об игроке
 public class Player {
     //имя игрока по умолчанию

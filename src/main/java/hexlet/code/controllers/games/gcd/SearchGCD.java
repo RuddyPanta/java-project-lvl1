@@ -1,8 +1,10 @@
 package hexlet.code.controllers.games.gcd;
+
 //поиск НОД от 2х чисел
 public class SearchGCD {
     //массив для разложения на делители одного числа
     private static int[] finalArr;
+
     //метод поиска длинны массива из числа для разложения
     //на делители для finalArr
     private static int searchIndexArr(int varT) {
@@ -18,6 +20,7 @@ public class SearchGCD {
         }
         return  index;
     }
+
     //заполнение массива finalArr делителями числа
     private static int[] searchFinalArr(int varT) {
         finalArr = new int[searchIndexArr(varT)];
@@ -35,6 +38,7 @@ public class SearchGCD {
         finalArr[finalArr.length - 1] = divisor;
         return  finalArr;
     }
+
     //поиск совпадений 2х массивов
     //первый массив меньше по умолчанию
     private static int matchingArr(int[] arrA, int[] arrB) {
@@ -53,6 +57,7 @@ public class SearchGCD {
         }
         return gcd;
     }
+
     //поиск общих делителей 2х массивов
     private static int searchForSharedArr(int[] arrA, int[] arrB) {
         //что бы не заморачиваться с поиском длинны массива состоящего из совпадений
