@@ -1,4 +1,4 @@
-package hexlet.code.controllers.games.gcd;
+package hexlet.code.games.gcd;
 
 //поиск НОД от 2х чисел
 public class SearchGCD {

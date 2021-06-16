@@ -1,17 +1,15 @@
-package hexlet.code.controllers.games.prime;
+package hexlet.code.games.prime;
 
-import hexlet.code.controllers.CheckIsWordYesOrNo;
-import hexlet.code.controllers.ExitProgram;
-import hexlet.code.controllers.RandomNumberForGame;
-import hexlet.code.controllers.ScannerIn;
-import hexlet.code.view.GamesInterface;
+import hexlet.code.utils.UtilsCommunicationWithThePlayer;
+import hexlet.code.utils.UtilsForGames;
+import hexlet.code.utils.UtilsInAndOutController;
 
 public class GamePrime {
     private static final int MAX_LIMIT = 500;
     public static void gamePrime() {
 
         //генерируем число
-        int number = RandomNumberForGame.randomRandom(MAX_LIMIT);
+        int number = UtilsForGames.randomRandom(MAX_LIMIT);
 
         //по умолчанию число простое
         boolean numberIsPrime = true;
@@ -27,14 +25,15 @@ public class GamePrime {
             }
         }
 
-        GamesInterface.gameInterfaceQuestion("Answer 'yes' if given number is prime. Otherwise answer 'no'.",
-                                              number);
+        UtilsCommunicationWithThePlayer.gameInterfaceQuestion("Answer 'yes' if given number is prime."
+                                                                        + " Otherwise answer 'no'.",
+                number);
 
-        String answerPlayer = ScannerIn.scannerInStr();
+        String answerPlayer = UtilsInAndOutController.scannerInStr();
 
         //проверка ввода игрока на yes или no
-        if (!CheckIsWordYesOrNo.checkIsWordYesOrNo(answerPlayer)) {
-            ExitProgram.exitProgramWrong();
+        if (!UtilsForGames.checkIsWordYesOrNo(answerPlayer)) {
+            UtilsInAndOutController.exitProgramWrong();
         }
 
         //присваивание boolean значение ответу игрока
@@ -49,10 +48,9 @@ public class GamePrime {
             if (numberIsPrime) {
                 answerComputer = "yes";
             }
-            GamesInterface.wrongAnswer(answerPlayer);
-            ExitProgram.exitProgramStandard();
-            }
-            GamesInterface.correct();
+            UtilsCommunicationWithThePlayer.wrongAnswer(answerPlayer);
+            UtilsInAndOutController.exitProgramStandard();
         }
+        UtilsCommunicationWithThePlayer.correct();
     }
-
+}

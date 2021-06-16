@@ -1,4 +1,4 @@
-package hexlet.code.controllers;
+package hexlet.code.games;
 
 //вся информация об игроке
 public class Player {

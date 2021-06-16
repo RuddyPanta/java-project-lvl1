@@ -1,9 +1,8 @@
-package hexlet.code.controllers.games.progression;
+package hexlet.code.games.progression;
 
-import hexlet.code.controllers.games.calc.ComparisonTwoInt;
-import hexlet.code.controllers.RandomNumberForGame;
-import hexlet.code.controllers.ScannerIn;
-import hexlet.code.view.GamesInterface;
+import hexlet.code.utils.UtilsCommunicationWithThePlayer;
+import hexlet.code.utils.UtilsForGames;
+import hexlet.code.utils.UtilsInAndOutController;
 
 public class GameProgression {
     private static final int MAX_LIMIT = 10;
@@ -13,11 +12,11 @@ public class GameProgression {
     public static void gameProgression() {
         //массив для хранения арифметической прогрессии
         //мин 5 ячеек мах 15
-        int[] mathArr = new int[MIN_LIMIT + RandomNumberForGame.randomRandom(MAX_LIMIT)];
+        int[] mathArr = new int[MIN_LIMIT + UtilsForGames.randomRandom(MAX_LIMIT)];
         mathArr[0] = 1;
 
         //генерация случайного шага
-        int step = RandomNumberForGame.randomRandom(MAX_STEP);
+        int step = UtilsForGames.randomRandom(MAX_STEP);
 
         //заполнение массива арифметической прогрессией
         for (int i = 1; i < mathArr.length; i++) {
@@ -26,7 +25,7 @@ public class GameProgression {
 
         //генерация индекса для пропуска при выводе
         //массива на экран
-        int index = RandomNumberForGame.randomRandom(mathArr.length);
+        int index = UtilsForGames.randomRandom(mathArr.length);
 
         //цифра которая будет пропущена
         int answerComputer = mathArr[index - 1];
@@ -44,11 +43,12 @@ public class GameProgression {
 
         String doneSB = sb.toString();
 
-        GamesInterface.gameInterfaceQuestion("What number is missing in the progression?", doneSB);
+        UtilsCommunicationWithThePlayer.gameInterfaceQuestion("What number is missing in the progression?",
+                                                                        doneSB);
 
-        int answerPlayer = ScannerIn.scannerInInt();
+        int answerPlayer = UtilsInAndOutController.scannerInInt();
 
-        GamesInterface.gameInterfaceAnswer(answerPlayer);
-        ComparisonTwoInt.comparisonTwoInt(answerPlayer, answerComputer);
+        UtilsCommunicationWithThePlayer.gameInterfaceAnswer(answerPlayer);
+        UtilsForGames.comparisonTwoInt(answerPlayer, answerComputer);
     }
 }
