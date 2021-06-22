@@ -1,13 +1,15 @@
 package hexlet.code.games.progression;
 
-import hexlet.code.utils.UtilsCommunicationWithThePlayer;
+import hexlet.code.games.Engine;
+import hexlet.code.utils.UtilsInfoForPlayer;
 import hexlet.code.utils.UtilsForGames;
-import hexlet.code.utils.UtilsInAndOutController;
+import hexlet.code.utils.UtilsScanner;
 
 public class GameProgression {
     private static final int MAX_LIMIT = 10;
     private static final int MIN_LIMIT = 5;
     private static final int MAX_STEP = 9;
+    private static final int GAME_TYPE = 2;
 
     public static void gameProgression() {
         //массив для хранения арифметической прогрессии
@@ -27,8 +29,6 @@ public class GameProgression {
         //массива на экран
         int index = UtilsForGames.randomRandom(mathArr.length);
 
-        //цифра которая будет пропущена
-        int answerComputer = mathArr[index - 1];
         //куда будет собираться массив и символ пропуска
         StringBuilder sb = new StringBuilder();
         String space = " ";
@@ -41,14 +41,13 @@ public class GameProgression {
             sb.append(mathArr[i] + space);
         }
 
-        String doneSB = sb.toString();
 
-        UtilsCommunicationWithThePlayer.gameInterfaceQuestion("What number is missing in the progression?",
-                                                                        doneSB);
 
-        int answerPlayer = UtilsInAndOutController.scannerInInt();
+        String tack = "What number is missing in the progression?";
+        String question = sb.toString();
+        String computerAnswer = String.valueOf(mathArr[index - 1]);
 
-        UtilsCommunicationWithThePlayer.gameInterfaceAnswer(answerPlayer);
-        UtilsForGames.comparisonTwoInt(answerPlayer, answerComputer);
+        Engine.engine(tack, question, GAME_TYPE, computerAnswer);
+
     }
 }

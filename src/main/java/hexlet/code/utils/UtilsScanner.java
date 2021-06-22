@@ -3,12 +3,18 @@ package hexlet.code.utils;
 import hexlet.code.games.Player;
 import java.util.Scanner;
 
-public class UtilsInAndOutController {
+public class UtilsScanner {
 
     //получение информации от пользователя
     public static String scannerInStr() {
         Scanner sc = new Scanner(System.in);
-        return sc.next();
+        String playerAnswer = sc.next();
+        if (!UtilsForGames.checkIsWordYesOrNo(playerAnswer)) {
+            System.out.println("Please enter 'yes' or 'no' and press Enter");
+            return scannerInStr();
+            //UtilsInOut.exitProgramWrong();
+        }
+        return playerAnswer;
     }
     public static int scannerInInt() {
         Scanner sc = new Scanner(System.in);

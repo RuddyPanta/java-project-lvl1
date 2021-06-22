@@ -5,8 +5,8 @@ import hexlet.code.games.even.GameEven;
 import hexlet.code.games.gcd.GameGCD;
 import hexlet.code.games.prime.GamePrime;
 import hexlet.code.games.progression.GameProgression;
-import hexlet.code.utils.UtilsCommunicationWithThePlayer;
-import hexlet.code.utils.UtilsInAndOutController;
+import hexlet.code.utils.UtilsInfoForPlayer;
+import hexlet.code.utils.UtilsScanner;
 
 public class App {
   public static void main(String[] args) {
@@ -30,57 +30,57 @@ public class App {
                   + prime + " - Prime\n"
                   + exit + " - Exit");
 
-          switch (UtilsInAndOutController.scannerInInt()) {
+          switch (UtilsScanner.scannerInInt()) {
               case greet:
-                  UtilsCommunicationWithThePlayer.askName();
+                  UtilsInfoForPlayer.askName();
                   break;
 
               case even:
-                  UtilsCommunicationWithThePlayer.askName();
+                  UtilsInfoForPlayer.askName();
                   for (int i = 0; i < numberOfAttempts; i++) {
                       GameEven.gameEven();
                   }
-                  UtilsCommunicationWithThePlayer.congratulations();
+                  UtilsInfoForPlayer.congratulations();
                   break;
 
               case calc:
-                  UtilsCommunicationWithThePlayer.askName();
+                  UtilsInfoForPlayer.askName();
                   for (int i = 0; i < numberOfAttempts; i++) {
                       GameCalc.gameCalc();
                   }
-                  UtilsCommunicationWithThePlayer.congratulations();
+                  UtilsInfoForPlayer.congratulations();
                   break;
 
               case gcd:
-                  UtilsCommunicationWithThePlayer.askName();
+                  UtilsInfoForPlayer.askName();
                   for (int i = 0; i < numberOfAttempts; i++) {
                       GameGCD.gameGCD();
                   }
-                  UtilsCommunicationWithThePlayer.congratulations();
+                  UtilsInfoForPlayer.congratulations();
                   break;
 
               case progression:
-                  UtilsCommunicationWithThePlayer.askName();
+                  UtilsInfoForPlayer.askName();
                   for (int i = 0; i < numberOfAttempts; i++) {
                       GameProgression.gameProgression();
                    }
-                  UtilsCommunicationWithThePlayer.congratulations();
+                  UtilsInfoForPlayer.congratulations();
                   break;
 
               case prime:
-                  UtilsCommunicationWithThePlayer.askName();
+                  UtilsInfoForPlayer.askName();
                   for (int i = 0; i < numberOfAttempts; i++) {
                       GamePrime.gamePrime();
                     }
-                  UtilsCommunicationWithThePlayer.congratulations();
+                  UtilsInfoForPlayer.congratulations();
                   break;
 
               case exit:
-                  UtilsInAndOutController.exitProgramStandard();
+                  UtilsScanner.exitProgramStandard();
                   break;
 
               default:
-                  UtilsInAndOutController.exitProgramWrong();
+                  UtilsScanner.exitProgramWrong();
                   break;
           }
       }

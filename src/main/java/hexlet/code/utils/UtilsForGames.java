@@ -18,10 +18,10 @@ public class UtilsForGames {
     //сравнение двух чисел
     public static void comparisonTwoInt(int answerPlayer, int answerComputer) {
         if (answerComputer == answerPlayer) {
-            UtilsCommunicationWithThePlayer.correct();
+            UtilsInfoForPlayer.correct();
         } else {
-            UtilsCommunicationWithThePlayer.wrongAnswer(answerPlayer, answerComputer);
-            UtilsInAndOutController.exitProgramStandard();
+            UtilsInfoForPlayer.wrongAnswer(String.valueOf(answerPlayer), String.valueOf(answerComputer));
+            UtilsScanner.exitProgramStandard();
         }
     }
 
@@ -39,4 +39,6 @@ public class UtilsForGames {
         Random rd = new Random();
         return Integer.valueOf(rd.nextInt(number) + 1);
     }
+
+
 }
