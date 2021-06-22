@@ -1,9 +1,7 @@
 package hexlet.code.games.progression;
 
 import hexlet.code.games.Engine;
-import hexlet.code.utils.UtilsInfoForPlayer;
 import hexlet.code.utils.UtilsForGames;
-import hexlet.code.utils.UtilsScanner;
 
 public class GameProgression {
     private static final int MAX_LIMIT = 10;

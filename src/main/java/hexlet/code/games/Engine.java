@@ -19,8 +19,12 @@ public class Engine {
 
            UtilsInfoForPlayer.printQuestion(task, question);
            String playerAnswer = null;
-           if (typeGame == 1) { playerAnswer = getStr();}
-           if (typeGame == 2) { playerAnswer = String.valueOf(getInt());}
+           if (typeGame == 1) {
+               playerAnswer = getStr();
+           }
+           if (typeGame == 2) {
+               playerAnswer = String.valueOf(getInt());
+           }
            if (!(computerAnswer.equals(playerAnswer)) && playerAnswer instanceof String) {
                 UtilsInfoForPlayer.wrongAnswer(playerAnswer, computerAnswer);
                 UtilsInfoForPlayer.exitProgramWrong();

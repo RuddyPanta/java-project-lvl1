@@ -11,7 +11,7 @@ public class GameGCD {
         int varA = UtilsForGames.randomRandom(MAX_LIMIT);
         int varB = UtilsForGames.randomRandom(MAX_LIMIT);
         String tack = "Find the greatest common divisor of given numbers.";
-        String question = varA + " " +varB;
+        String question = varA + " " + varB;
         String answerComputer = String.valueOf(SearchGCD.searchGCD(varA, varB));
         Engine.engine(tack, question, GAME_TYPE, answerComputer);
 
