@@ -3,33 +3,28 @@ package hexlet.code.games;
 import hexlet.code.utils.UtilsScanner;
 import hexlet.code.utils.UtilsInfoForPlayer;
 
+import java.util.List;
+
 public class Engine {
-        private static String getStr() {
 
-            return UtilsScanner.scannerInStr();
 
-        }
+        public static void engine(List<String> taskList,
+                                  List<String> questionList,
+                                  List<String> computerAnswerList,
+                                  final int lifeOfGame) {
 
-        private static int getInt() {
+           UtilsInfoForPlayer.askName();
 
-            return UtilsScanner.scannerInInt();
+           for (int i = 0; i < lifeOfGame; i++) {
+               UtilsInfoForPlayer.printQuestion(taskList.get(i), questionList.get(i));
+               String playerAnswer = UtilsScanner.scannerIn();
 
-        }
-        public static void engine(String task, String question, int typeGame, String computerAnswer) {
+               if (!(computerAnswerList.get(i).equals(playerAnswer)) && playerAnswer instanceof String) {
+                   UtilsInfoForPlayer.wrongAnswer(playerAnswer, computerAnswerList.get(i));
+                   UtilsInfoForPlayer.exitProgramWrong();
+               }
 
-           UtilsInfoForPlayer.printQuestion(task, question);
-           String playerAnswer = null;
-           if (typeGame == 1) {
-               playerAnswer = getStr();
+               UtilsInfoForPlayer.correct();
            }
-           if (typeGame == 2) {
-               playerAnswer = String.valueOf(getInt());
-           }
-           if (!(computerAnswer.equals(playerAnswer)) && playerAnswer instanceof String) {
-                UtilsInfoForPlayer.wrongAnswer(playerAnswer, computerAnswer);
-                UtilsInfoForPlayer.exitProgramWrong();
-           }
-
-           UtilsInfoForPlayer.correct();
         }
 }
