@@ -1,6 +1,7 @@
 package hexlet.code.games.gcd;
 
 import hexlet.code.games.Engine;
+import hexlet.code.games.Game;
 import hexlet.code.utils.UtilsForGames;
 
 import java.util.ArrayList;
@@ -8,35 +9,35 @@ import java.util.List;
 
 public class GameGCD {
 
-    private static final int MAX_LIMIT = 1000;
-    private static final int LIFE_OF_GAME = 3;
+    private static int searchGCD(int varA, int varB) {
+        while (varA != 0 && varB != 0) {
+            if (varA > varB) {
+                varA = varA % varB;
+            } else {
+                varB = varB % varA;
+            }
+        }
+        return varA + varB;
+    }
 
-    public static void gameGCD() {
+      public static void gameGCD() {
 
-        String task;
-        String question;
-        String computerAnswer;
+        List<String> questions = new ArrayList<>(Engine.getLifeOfGame());
+        List<String> computerAnswers = new ArrayList<>(Engine.getLifeOfGame());
 
         int varA;
         int varB;
 
-        List<String> taskList = new ArrayList<>(LIFE_OF_GAME);
-        List<String> questionList = new ArrayList<>(LIFE_OF_GAME);
-        List<String> computerAnswerList = new ArrayList<>(LIFE_OF_GAME);
 
-        for (int i = 0; i < LIFE_OF_GAME; i++) {
-            varA = UtilsForGames.randomRandom(MAX_LIMIT);
-            varB = UtilsForGames.randomRandom(MAX_LIMIT);
-            task = "Find the greatest common divisor of given numbers.";
-            question = varA + " " + varB;
-            computerAnswer = String.valueOf(SearchGCD.searchGCD(varA, varB));
 
-            taskList.add(task);
-            questionList.add(String.valueOf(question));
-            computerAnswerList.add(computerAnswer);
+        for (int i = 0; i < Engine.getLifeOfGame(); i++) {
+            varA = UtilsForGames.randomRandom(Engine.getMaxLimit());
+            varB = UtilsForGames.randomRandom(Engine.getMaxLimit());
 
+            questions.add(String.valueOf(varA + " " + varB));
+            computerAnswers.add(String.valueOf(searchGCD(varA, varB)));
         }
 
-        Engine.engine(taskList, questionList, computerAnswerList, LIFE_OF_GAME);
+        Engine.run(Game.GCD, questions, computerAnswers);
     }
 }
