@@ -15,40 +15,40 @@ public class App {
 
     public static void main(String[] args) {
 
-        final String GREET = "1";
-        final String EVEN = "2";
-        final String CALC = "3";
-        final String GCD = "4";
-        final String PROGRESSION = "5";
-        final String PRIME = "6";
-        final String EXIT = "0";
+        final String greet = "1";
+        final String even = "2";
+        final String calc = "3";
+        final String gcd = "4";
+        final String progression = "5";
+        final String prime = "6";
+        final String exit = "0";
 
         //запуск главного меню
         System.out.println("Please enter the game number and press Enter.\n"
-                + GREET + " - Greet\n"
-                + EVEN + " - Even\n"
-                + CALC + " - Calc\n"
-                + GCD + " - GCD\n"
-                + PROGRESSION + " - Progression\n"
-                + PRIME + " - Prime\n"
-                + EXIT + " - Exit");
+                + greet + " - Greet\n"
+                + even + " - Even\n"
+                + calc + " - Calc\n"
+                + gcd + " - GCD\n"
+                + progression + " - Progression\n"
+                + prime + " - Prime\n"
+                + exit + " - Exit");
 
         Scanner sc = new Scanner(System.in);
         switch (sc.next()) {
-            case GREET -> Engine.askName();
-            case EVEN -> {
+            case greet -> Engine.askName();
+            case even -> {
                 GameEven.gameEven();
             }
-            case CALC -> {
+            case calc -> {
                 GameCalc.gameCalc();
             }
-            case GCD -> {
+            case gcd -> {
                 GameGCD.gameGCD();
             }
-            case PROGRESSION -> {
+            case progression -> {
                 GameProgression.gameProgression();
             }
-            case PRIME -> {
+            case prime -> {
                 GamePrime.gamePrime();
             }
             default -> Engine.exitProgramWrong();
