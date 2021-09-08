@@ -8,8 +8,6 @@ import java.util.List;
 
 public class GameGCD {
 
-    private static final String GCD = "Find the greatest common divisor of given numbers.";
-
     private static int searchGCD(int varA, int varB) {
         while (varA != 0 && varB != 0) {
             if (varA > varB) {
@@ -26,6 +24,8 @@ public class GameGCD {
         List<String> questions = new ArrayList<>(Engine.LIFE_OF_GAME);
         List<String> computerAnswers = new ArrayList<>(Engine.LIFE_OF_GAME);
 
+        String questionConsole = "Find the greatest common divisor of given numbers.";
+
         int varA;
         int varB;
 
@@ -38,6 +38,6 @@ public class GameGCD {
             computerAnswers.add(String.valueOf(searchGCD(varA, varB)));
         }
 
-        Engine.run(GCD, questions, computerAnswers);
+        Engine.run(questionConsole, questions, computerAnswers);
     }
 }

@@ -8,13 +8,11 @@ public class Engine {
     public static final int LIFE_OF_GAME = 3;
     public static final int MAX_LIMIT = 100;
 
-    private static String playerName = "NoName";
-
     public static void run(String game,
                            List<String> questions,
                            List<String> computerAnswers) {
 
-        askName();
+        String playerName = askName();
 
         for (int i = 0; i < LIFE_OF_GAME; i++) {
 
@@ -29,7 +27,8 @@ public class Engine {
                 System.out.println(playerAnswer
                         + " is wrong answer ;(. Correct answer was "
                         + computerAnswers.get(i));
-                exitProgramWrong();
+                System.out.println("Let's try again, " + playerName + "!");
+                return;
             }
 
             System.out.println("Correct!");
@@ -37,21 +36,17 @@ public class Engine {
 
         System.out.println("Congratulations, " + playerName + "!");
 
+
     }
 
-    public static void askName() {
-
+    public static String askName() {
+        String playerName;
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
         Scanner sc = new Scanner(System.in);
         playerName = sc.next();
         System.out.println("Hello, " + playerName + "!");
+        return playerName;
 
-    }
-
-    public static void exitProgramWrong() {
-
-        System.out.println("Let's try again, " + playerName + "!");
-        System.exit(0);
     }
 }

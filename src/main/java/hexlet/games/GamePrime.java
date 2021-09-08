@@ -8,8 +8,6 @@ import java.util.List;
 
 public class GamePrime {
 
-    private static final String PRIME = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
     private static boolean isPrime(int number) {
         //если число разделиться без остатка, то оно составное
         //Наименьший положительный и отличный от 1 делитель основного числа а
@@ -29,6 +27,8 @@ public class GamePrime {
         List<String> questions = new ArrayList<>(Engine.LIFE_OF_GAME);
         List<String> computerAnswers = new ArrayList<>(Engine.LIFE_OF_GAME);
 
+        String questionConsole = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
         for (int i = 0; i < Engine.LIFE_OF_GAME; i++) {
             //генерируем число
             int number = UtilsForGames.randomRandom(Engine.MAX_LIMIT);
@@ -37,7 +37,7 @@ public class GamePrime {
             questions.add(String.valueOf(number));
         }
 
-        Engine.run(PRIME, questions, computerAnswers);
+        Engine.run(questionConsole, questions, computerAnswers);
 
     }
 }

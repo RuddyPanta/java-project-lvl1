@@ -8,46 +8,46 @@ import java.util.List;
 
 public class GameCalc {
 
-    private static final int MAX_RAND_FOR_SIGN = 9;
-    private static final int MAX_LIMIT_PLUS = 3;
-    private static final int MAX_LIMIT_MINUS = 6;
-    private static final int MAX_LIMIT_MULTIPLICATION = 9;
-    private static final String CALC = "What is the result of the expression?";
-
     public static void gameCalc() {
 
         List<String> questions = new ArrayList<>(Engine.LIFE_OF_GAME);
         List<String> computerAnswers = new ArrayList<>(Engine.LIFE_OF_GAME);
 
+        String questionConsole = "What is the result of the expression?";
+
         for (int i = 0; i < Engine.LIFE_OF_GAME; i++) {
 
             //формируем случайные числа и операнд
-            int varA = UtilsForGames.randomRandom(Engine.MAX_LIMIT);
-            int varB = UtilsForGames.randomRandom(Engine.MAX_LIMIT);
-            int varSign = UtilsForGames.randomRandom(MAX_RAND_FOR_SIGN);
-
             //используется кубик с 9ю гранями для
             //повышения вариативности
+            final int rangeForSign = 9;
+            int varA = UtilsForGames.randomRandom(Engine.MAX_LIMIT);
+            int varB = UtilsForGames.randomRandom(Engine.MAX_LIMIT);
+            int varSign = UtilsForGames.randomRandom(rangeForSign);
+
+            final int rangeForPlus = 3;
+            final int rangeForMinus = 6;
+            final int rangeForMultiplication = 9;
             //сложение
-            if (varSign <= MAX_LIMIT_PLUS) {
+            if (varSign <= rangeForPlus) {
                 questions.add(varA + " + " + varB);
                 computerAnswers.add(String.valueOf(varA + varB));
             }
 
             //вычитание
-            if (varSign > MAX_LIMIT_PLUS && varSign <= MAX_LIMIT_MINUS) {
+            if (varSign > rangeForPlus && varSign <= rangeForMinus) {
                 questions.add(varA + " - " + varB);
                 computerAnswers.add(String.valueOf(varA - varB));
             }
 
             //умножение
-            if (varSign > MAX_LIMIT_MINUS && varSign <= MAX_LIMIT_MULTIPLICATION) {
+            if (varSign > rangeForMinus && varSign <= rangeForMultiplication) {
                 questions.add(varA + " * " + varB);
                 computerAnswers.add(String.valueOf(varA * varB));
             }
         }
 
-        Engine.run(CALC, questions, computerAnswers);
+        Engine.run(questionConsole, questions, computerAnswers);
     }
 
 }

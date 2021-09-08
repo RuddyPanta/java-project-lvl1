@@ -13,45 +13,38 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) {
+    private static final String GREET = "1";
+    private static final String EVEN = "2";
+    private static final String CALC = "3";
+    private static final String GCD = "4";
+    private static final String PROGRESSION = "5";
+    private static final String PRIME = "6";
+    private static final String EXIT = "0";
 
-        final String greet = "1";
-        final String even = "2";
-        final String calc = "3";
-        final String gcd = "4";
-        final String progression = "5";
-        final String prime = "6";
-        final String exit = "0";
+    public static void main(String[] args) {
 
         //запуск главного меню
         System.out.println("Please enter the game number and press Enter.\n"
-                + greet + " - Greet\n"
-                + even + " - Even\n"
-                + calc + " - Calc\n"
-                + gcd + " - GCD\n"
-                + progression + " - Progression\n"
-                + prime + " - Prime\n"
-                + exit + " - Exit");
+                + GREET + " - Greet\n"
+                + EVEN + " - Even\n"
+                + CALC + " - Calc\n"
+                + GCD + " - GCD\n"
+                + PROGRESSION + " - Progression\n"
+                + PRIME + " - Prime\n"
+                + EXIT + " - Exit");
 
         Scanner sc = new Scanner(System.in);
         switch (sc.next()) {
-            case greet -> Engine.askName();
-            case even -> {
-                GameEven.gameEven();
+            case GREET -> Engine.askName();
+            case EVEN -> GameEven.gameEven();
+            case CALC -> GameCalc.gameCalc();
+            case GCD -> GameGCD.gameGCD();
+            case PROGRESSION -> GameProgression.gameProgression();
+            case PRIME -> GamePrime.gamePrime();
+            default -> {
+                break;
             }
-            case calc -> {
-                GameCalc.gameCalc();
-            }
-            case gcd -> {
-                GameGCD.gameGCD();
-            }
-            case progression -> {
-                GameProgression.gameProgression();
-            }
-            case prime -> {
-                GamePrime.gamePrime();
-            }
-            default -> Engine.exitProgramWrong();
+
         }
     }
 

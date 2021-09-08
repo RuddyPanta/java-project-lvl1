@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class UtilsForGames {
 
-    //генерация числа с случайным максимальным значением
+    //генерация числа со случайным максимальным значением
     public static int randomRandom(int number) {
         Random rd = new Random();
         return Integer.valueOf(rd.nextInt(number) + 1);
