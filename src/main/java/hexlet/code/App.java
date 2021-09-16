@@ -1,12 +1,11 @@
-package hexlet;
+package hexlet.code;
 
 
-import hexlet.code.Engine;
-import hexlet.games.GameCalc;
-import hexlet.games.GameEven;
-import hexlet.games.GameGCD;
-import hexlet.games.GamePrime;
-import hexlet.games.GameProgression;
+import hexlet.code.games.GameCalc;
+import hexlet.code.games.GameEven;
+import hexlet.code.games.GameGCD;
+import hexlet.code.games.GamePrime;
+import hexlet.code.games.GameProgression;
 
 import java.util.Scanner;
 
@@ -35,7 +34,7 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
         switch (sc.next()) {
-            case GREET -> Engine.askName();
+            case GREET -> Cli.greed();
             case EVEN -> GameEven.gameEven();
             case CALC -> GameCalc.gameCalc();
             case GCD -> GameGCD.gameGCD();

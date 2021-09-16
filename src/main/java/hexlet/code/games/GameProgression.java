@@ -1,24 +1,26 @@
-package hexlet.games;
+package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.UtilsForGames;
+import hexlet.code.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameProgression {
 
+    private static final String QUESTION_CONSOLE = "What number is missing in the progression?";
+
     private static int[] createArray() {
         // арифметической прогрессии
         //мин 5 ячеек мах 15
         int[] mathArr;
         final int minLimit = 5;
-        mathArr = new int[minLimit + UtilsForGames.randomRandom(Engine.LIFE_OF_GAME)];
+        mathArr = new int[minLimit + Utils.randomRandom(Engine.LIFE_OF_GAME)];
         mathArr[0] = 1;
 
         //генерация случайного шага
         final int maxStep = 9;
-        final int step = UtilsForGames.randomRandom(maxStep);
+        final int step = Utils.randomRandom(maxStep);
 
         //заполнение массива арифметической прогрессией
         for (int j = 1; j < mathArr.length; j++) {
@@ -49,16 +51,14 @@ public class GameProgression {
         List<String> questions = new ArrayList<>(Engine.LIFE_OF_GAME);
         List<String> computerAnswers = new ArrayList<>(Engine.LIFE_OF_GAME);
 
-        String questionConsole = "What number is missing in the progression?";
-
         for (int i = 0; i < Engine.LIFE_OF_GAME; i++) {
             int[] mathArr = createArray();
-            final int index = UtilsForGames.randomRandom(mathArr.length);
+            final int index = Utils.randomRandom(mathArr.length);
             questions.add(createArrayWistSpace(index, mathArr).toString());
             computerAnswers.add(String.valueOf(mathArr[index - 1]));
         }
 
-        Engine.run(questionConsole, questions, computerAnswers);
+        Engine.run(QUESTION_CONSOLE, questions, computerAnswers);
 
     }
 }

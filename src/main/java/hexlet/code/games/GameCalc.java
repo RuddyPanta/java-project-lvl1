@@ -1,6 +1,6 @@
-package hexlet.games;
+package hexlet.code.games;
 
-import hexlet.code.UtilsForGames;
+import hexlet.code.Utils;
 import hexlet.code.Engine;
 
 import java.util.ArrayList;
@@ -8,12 +8,12 @@ import java.util.List;
 
 public class GameCalc {
 
+    private static final String QUESTION_CONSOLE = "What is the result of the expression?";
+
     public static void gameCalc() {
 
         List<String> questions = new ArrayList<>(Engine.LIFE_OF_GAME);
         List<String> computerAnswers = new ArrayList<>(Engine.LIFE_OF_GAME);
-
-        String questionConsole = "What is the result of the expression?";
 
         for (int i = 0; i < Engine.LIFE_OF_GAME; i++) {
 
@@ -21,9 +21,9 @@ public class GameCalc {
             //используется кубик с 9ю гранями для
             //повышения вариативности
             final int rangeForSign = 9;
-            int varA = UtilsForGames.randomRandom(Engine.MAX_LIMIT);
-            int varB = UtilsForGames.randomRandom(Engine.MAX_LIMIT);
-            int varSign = UtilsForGames.randomRandom(rangeForSign);
+            int varA = Utils.randomRandom(Utils.MAX_LIMIT);
+            int varB = Utils.randomRandom(Utils.MAX_LIMIT);
+            int varSign = Utils.randomRandom(rangeForSign);
 
             final int rangeForPlus = 3;
             final int rangeForMinus = 6;
@@ -47,7 +47,7 @@ public class GameCalc {
             }
         }
 
-        Engine.run(questionConsole, questions, computerAnswers);
+        Engine.run(QUESTION_CONSOLE, questions, computerAnswers);
     }
 
 }

@@ -17,7 +17,7 @@ version = '1.0-SNAPSHOT'
 
 
 application {
-  mainClass = 'hexlet.App'
+  mainClass = 'hexlet.code.App'
 }
 
 compileJava {

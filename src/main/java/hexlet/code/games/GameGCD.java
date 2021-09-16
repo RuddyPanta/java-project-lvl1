@@ -1,12 +1,14 @@
-package hexlet.games;
+package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.UtilsForGames;
+import hexlet.code.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameGCD {
+
+    private static final String QUESTION_CONSOLE = "Find the greatest common divisor of given numbers.";
 
     private static int searchGCD(int varA, int varB) {
         while (varA != 0 && varB != 0) {
@@ -24,20 +26,14 @@ public class GameGCD {
         List<String> questions = new ArrayList<>(Engine.LIFE_OF_GAME);
         List<String> computerAnswers = new ArrayList<>(Engine.LIFE_OF_GAME);
 
-        String questionConsole = "Find the greatest common divisor of given numbers.";
-
-        int varA;
-        int varB;
-
-
         for (int i = 0; i < Engine.LIFE_OF_GAME; i++) {
-            varA = UtilsForGames.randomRandom(Engine.MAX_LIMIT);
-            varB = UtilsForGames.randomRandom(Engine.MAX_LIMIT);
+            int varA = Utils.randomRandom(Utils.MAX_LIMIT);
+            int varB = Utils.randomRandom(Utils.MAX_LIMIT);
 
-            questions.add(String.valueOf(varA + " " + varB));
+            questions.add(varA + " " + varB);
             computerAnswers.add(String.valueOf(searchGCD(varA, varB)));
         }
 
-        Engine.run(questionConsole, questions, computerAnswers);
+        Engine.run(QUESTION_CONSOLE, questions, computerAnswers);
     }
 }
